@@ -39,6 +39,7 @@ function viewCart() {
       } else  {
          str+=`${key} at $${getCart()[i][key]}.`
       }
+      count--;
     }
   }
   console.log(str);
