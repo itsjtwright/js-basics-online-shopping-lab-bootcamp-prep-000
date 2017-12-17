@@ -73,9 +73,9 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   // write your code here
-  getCart().length = 0;
   if(typeof cardNumber === "number") {
     console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`)
+    getCart().length = 0;
   } else {
     console.log("Sorry, we don't have a credit card on file for you.")
   }
