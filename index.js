@@ -57,11 +57,16 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
+  var flag = true;
   for(let i = 0; i<getCart().length;i++) {
     var key = Object.keys(getCart()[i])
     if(item == key) {
       getCart().splice(i,1);
+      flag = false;
     }
+  }
+  if(flag === true) {
+    console.log("That item is not in your cart.");
   }
   return getCart();
 }
