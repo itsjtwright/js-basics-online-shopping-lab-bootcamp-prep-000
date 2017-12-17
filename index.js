@@ -60,7 +60,7 @@ function removeFromCart(item) {
   for(let i = 0; i<getCart().length;i++) {
     var key = Object.keys(getCart()[i])
     if(item === key) {
-      delete getCart()[i][key];
+      getCart().splice(i,1);
     }
   }
   return getCart();
