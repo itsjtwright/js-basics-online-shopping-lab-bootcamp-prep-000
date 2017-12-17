@@ -37,7 +37,7 @@ function viewCart() {
       } else if (count === 2) {
         str+=`${key} at $${getCart()[i][key]}${oxford}`
       } else  {
-         str+=`${key} at $${getCart()[i][key]}.`
+        str+=`${key} at $${getCart()[i][key]}.`
       }
       count--;
     }
@@ -57,6 +57,7 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
+  
 }
 
 function placeOrder(cardNumber) {
