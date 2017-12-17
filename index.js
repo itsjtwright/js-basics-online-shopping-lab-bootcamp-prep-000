@@ -63,6 +63,7 @@ function removeFromCart(item) {
       delete getCart()[i][key];
     }
   }
+  return getCart();
 }
 
 function placeOrder(cardNumber) {
