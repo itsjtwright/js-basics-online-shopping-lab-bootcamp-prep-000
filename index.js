@@ -11,14 +11,47 @@ function setCart(c) {
 
 function addToCart(item) {
  // write your code here
+ var obj = {};
+ obj[item]=Math.floor(Math.random() * 100) + 1;
+ getCart().push(obj);
+ console.log(`${item} has been added to your cart.`)
+ return cart;
 }
 
 function viewCart() {
+  var str = "";
+  var oxford = " and "
   // write your code here
+  if(getCart().length >= 3) {
+    oxford = ", and "
+  }
+  if(getCart().length === 0) {
+    console.log("Your shopping cart is empty.")
+  } else {
+    str = "In your cart, you have ";
+    var count = getCart().length;
+    for(let i = 0; i<getCart().length; i++) {
+      var key = Object.keys(getCart()[i])
+      if(count >= 3) {
+        str+=`${key} at $${getCart()[i][key]}, `
+      } else if (count === 2) {
+        str+=`${key} at $${getCart()[i][key]}${oxford}`
+      } else  {
+         str+=`${key} at $${getCart()[i][key]}.`
+      }
+    }
+  }
+  console.log(str);
 }
 
 function total() {
   // write your code here
+  var total = 0;
+  for(let i = 0; i < getCart().length; i++) {
+    var key = Object.keys(getCart()[i])
+    total += parseInt(getCart()[i][key]);
+  }
+  return total;
 }
 
 function removeFromCart(item) {
@@ -27,4 +60,10 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   // write your code here
+  getCart().length = 0;
+  if(typeof cardNumber === Number) {
+    
+  } else {
+    console.log("Sorry, we don't have a credit card on file for you.")
+  }
 }
